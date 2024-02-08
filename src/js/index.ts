@@ -49,6 +49,10 @@ async function loopCollatz() {
     // Allowed users to pick a number to start from and loop from there.
     // Instead of originally starting at 2.
     let init = parseInt((document.getElementById('numberInput')! as HTMLInputElement).value);
+    if (isNaN(init)) {
+        init = 2;
+        console.log("Invalid input. Defaulting to 2.")
+    };
     while (shouldDoLoop) {
         await runCollatz(init++, true)?.then((result) => {
             if (result !== 1) {

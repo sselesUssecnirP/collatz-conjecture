@@ -41,6 +41,11 @@ function doLoop() {
 }
 async function loopCollatz() {
     let init = parseInt(document.getElementById('numberInput').value);
+    if (isNaN(init)) {
+        init = 2;
+        console.log("Invalid input. Defaulting to 2.");
+    }
+    ;
     while (shouldDoLoop) {
         await runCollatz(init++, true)?.then((result) => {
             if (result !== 1) {
