@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Collatz Conjecture Calculator</title>
+        <link rel="stylesheet" href="./css/index.css">
+    </head>
+    <body>
+        <button id="toggle" onclick="toggleMode()">Toggle Dark Mode</button>
+        <h1>Collatz Conjecture Calculator</h1>
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput"><br>
+        <button id="calc" onclick="runCollatz(parseInt(document.getElementById('numberInput').value))">Calculate!</button>
+       <button id="loop" onclick="doLoop()">Loop!</button>
+        <div id="result" hidden>
+
+        </div>
+
+
+        <script>
+            // Check if a mode is already selected in browser storage
+            const storedMode = localStorage.getItem('mode');
+            let currentMode = 'dark-mode';
+            document.documentElement.classList.remove(currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+            document.documentElement.classList.add(currentMode)
+            if (storedMode) {
+                document.documentElement.classList.add(storedMode);
+            }
+
+            // Function to toggle between dark mode and light mode
+            function toggleMode() {
+                currentMode = currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode';
+                document.documentElement.classList.remove(currentMode === 'dark-mode' ? 'light-mode' : 'dark-mode');
+                document.documentElement.classList.add(currentMode)
+                localStorage.setItem('mode', currentMode);
+            }
+        </script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>

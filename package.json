@@ -1,0 +1,16 @@
+{
+  "name": "collatz-conjecture",
+  "version": "1.0.0",
+  "description": "vsauce taught me a funny math trick hehe",
+  "main": "index.js",
+  "scripts": {
+    "test": "tsc -pretty"
+  },
+  "keywords": [
+    "collatz",
+    "conjecture",
+    "vsauce"
+  ],
+  "author": "sselesUssecnirP",
+  "license": "MIT"
+}
