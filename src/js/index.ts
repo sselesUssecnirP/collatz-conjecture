@@ -46,7 +46,9 @@ function doLoop() {
 }
 
 async function loopCollatz() {
-    let init = 2;
+    // Allowed users to pick a number to start from and loop from there.
+    // Instead of originally starting at 2.
+    let init = parseInt((document.getElementById('numberInput')! as HTMLInputElement).value);
     while (shouldDoLoop) {
         await runCollatz(init++, true)?.then((result) => {
             if (result !== 1) {
