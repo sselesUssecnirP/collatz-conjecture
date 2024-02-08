@@ -40,7 +40,7 @@ function doLoop() {
     }
 }
 async function loopCollatz() {
-    let init = 2;
+    let init = parseInt(document.getElementById('numberInput').value);
     while (shouldDoLoop) {
         await runCollatz(init++, true)?.then((result) => {
             if (result !== 1) {
