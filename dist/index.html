@@ -3,10 +3,13 @@
     <head>
         <title>Collatz Conjecture Calculator</title>
         <link rel="stylesheet" href="./css/index.css">
+        <meta property="og:title" content="Collatz Conjecture - TypeScript Calculator">
+        <meta property="og:description" content="A calculator and visualizer (currently ugly, but maybe I'll make it look better later)">
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/813580657426825216/1205048721981702144/collatz.jpg?ex=65d6f414&is=65c47f14&hm=a7e0ddb3b8fabc72fc8e40e438d8abd04a3ea1136f7ff6657831169d266e938b&">
     </head>
     <body>
         <button id="toggle" onclick="toggleMode()">Toggle Dark Mode</button>
-        <h1>Collatz Conjecture Calculator</h1>
+        <h1><a href="https://en.wikipedia.org/wiki/Collatz_conjecture">Collatz Conjecture Calculator</a></h1>
         <label for="numberInput">Enter a number:</label>
         <input type="number" id="numberInput"><br>
         <button id="calc" onclick="runCollatz(parseInt(document.getElementById('numberInput').value))">Calculate!</button>
